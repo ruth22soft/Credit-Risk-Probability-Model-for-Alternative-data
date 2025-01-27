@@ -10,3 +10,39 @@
 2025-01-26 23:02:44,092 - INFO - Visualization successfully completed.
 2025-01-26 23:02:44,197 - INFO - Visualizing the distribution of useful categorical features...
 2025-01-26 23:02:51,977 - INFO - Distribution plot successfully completed.
+2025-01-26 23:40:32,215 - INFO - Data loading initiated.
+2025-01-26 23:40:32,222 - INFO - Data loaded successfully.
+2025-01-26 23:40:32,224 - INFO - Data overview initiated.
+2025-01-26 23:40:32,226 - INFO - Data overview successfully completed.
+2025-01-26 23:41:18,820 - INFO - Data loading initiated.
+2025-01-26 23:41:18,829 - INFO - Data loaded successfully.
+2025-01-26 23:41:18,831 - INFO - Data overview initiated.
+2025-01-26 23:41:18,833 - INFO - Data overview successfully completed.
+2025-01-26 23:45:21,174 - INFO - Data loading initiated.
+2025-01-26 23:45:21,189 - INFO - Data loaded successfully.
+2025-01-26 23:45:21,193 - INFO - Data overview initiated.
+2025-01-26 23:45:21,197 - INFO - Data overview successfully completed.
+2025-01-26 23:48:46,767 - INFO - Data loading initiated.
+2025-01-26 23:48:48,007 - INFO - Data loaded successfully.
+2025-01-26 23:48:48,011 - INFO - Data overview initiated.
+2025-01-26 23:48:48,211 - INFO - Data overview successfully completed.
+2025-01-26 23:48:48,979 - INFO - Generating summary statistics for numeric columns...
+2025-01-26 23:48:49,142 - INFO - Summary statistics generation completed.
+2025-01-26 23:48:49,167 - INFO - Plot Numberical Distribution...
+2025-01-26 23:49:02,154 - INFO - The distribution plot successfully completed.
+2025-01-26 23:49:02,190 - INFO - Visualizing Skewness of numercial features...
+2025-01-26 23:49:02,849 - INFO - Visualization successfully completed.
+2025-01-26 23:49:02,878 - INFO - Visualizing the distribution of useful categorical features...
+2025-01-26 23:49:11,148 - INFO - Distribution plot successfully completed.
+2025-01-26 23:55:08,646 - INFO - Data loading initiated.
+2025-01-26 23:55:09,371 - INFO - Data loaded successfully.
+2025-01-26 23:55:09,375 - INFO - Data overview initiated.
+2025-01-26 23:55:09,517 - INFO - Data overview successfully completed.
+2025-01-26 23:55:09,807 - INFO - Generating summary statistics for numeric columns...
+2025-01-26 23:55:09,907 - INFO - Summary statistics generation completed.
+2025-01-26 23:55:09,926 - INFO - Plot Numberical Distribution...
+2025-01-26 23:55:18,501 - INFO - The distribution plot successfully completed.
+2025-01-26 23:55:18,537 - INFO - Visualizing Skewness of numercial features...
+2025-01-26 23:55:19,091 - INFO - Visualization successfully completed.
+2025-01-26 23:55:19,117 - INFO - Visualizing the distribution of useful categorical features...
+2025-01-26 23:55:24,510 - INFO - Distribution plot successfully completed.
