@@ -1,0 +1,204 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Main container */
+.main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Headings */
+h1 {
+    color: #34495e;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+/* Form layout */
+.prediction-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Adjust layout based on prediction presence */
+.no-prediction .form-container {
+    max-width: 600px; /* Centered, larger form when no prediction is present */
+    margin: 0 auto;
+}
+
+.prediction-present .form-container {
+    max-width: 580px;
+    flex: 1; /* Allow both form and prediction to display side by side */
+}
+
+.form-container, .result-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Show the result container when prediction is present */
+.result-container {
+    max-width: 580px;
+    flex: 1;
+    display: none; /* Hidden by default */
+}
+
+.prediction-present .result-container {
+    display: block; /* Show results when a prediction is present */
+}
+
+/* Form grid for inputs */
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px; /* Adjust as needed */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%; /* Adjust width as needed */
+    margin-bottom: 20px; /* Space between fields */
+}
+
+label {
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+input[type="number"], input[type="date"], input[type='text'], select {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+input[type="number"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Button group styling */
+.btn-group {
+    text-align: right; /* Align content to the right */
+    margin-top: 30px; /* Space above the button */
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .prediction-layout {
+        flex-direction: column; /* Stack form and results on smaller screens */
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Form fields stack vertically on smaller screens */
+    }
+
+    .form-container, .result-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 10px;
+    }
+
+    .form-container, .result-container {
+        padding: 20px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+    }
+}
+
+/* Result table styling */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.result-table th, .result-table td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+.result-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.result-table td {
+    background-color: #f7f9fc;
+    font-size: 16px;
+    color: #333;
+}
+
+.result-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
