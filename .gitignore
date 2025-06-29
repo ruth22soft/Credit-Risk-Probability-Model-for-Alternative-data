@@ -1,0 +1,27 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv
+venv/
+
+# Data files
+*.csv
+*.parquet
+*.pkl
+*.db
+*.xlsx
+data/
+
+# Notebooks
+*.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
