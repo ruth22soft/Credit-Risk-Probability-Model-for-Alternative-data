@@ -3,6 +3,8 @@ import pandas as pd
 
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder
+
 
 
 # temporal features
@@ -42,16 +44,40 @@ def create_risk_labels(rfm_data):
     rfm_data['is_high_risk'] = (rfm_data['Cluster'] == 0).astype(int)  # Critical line
     return rfm_data
 
-if __name__ == "__main__":
+def encode_categorical(df, cols_to_encode):
+    """One-hot encode categorical features"""
+    encoder = OneHotEncoder(drop='first', sparse=False)
+    encoded = encoder.fit_transform(df[cols_to_encode])
+    
+    # Create feature names
+    feature_names = []
+    for col, categories in zip(cols_to_encode, encoder.categories_):
+        feature_names += [f"{col}_{cat}" for cat in categories[1:]]
+    
+    # Convert to DataFrame
+    encoded_df = pd.DataFrame(encoded, columns=feature_names)
+    
+    # Combine with original data
+    return pd.concat([df.drop(cols_to_encode, axis=1), encoded_df], axis=1)
+
+# src/data_processing.py
+def main():
     # 1. Load raw data
     raw_data = pd.read_csv("../data/raw/data.csv")
     
-    # 2. Create RFM features
-    rfm_data = create_rfm_features(raw_data)
+    # 2. Extract temporal features (NEW)
+    data_with_time = extract_temporal_features(raw_data)
     
-    # 3. Add risk labels (THIS WAS MISSING!)
+    # 3. Create RFM features
+    rfm_data = create_rfm_features(data_with_time)
+    
+    # 4. Add risk labels
     rfm_with_risk = create_risk_labels(rfm_data)
     
-    # 4. Save FINAL data (now includes 'is_high_risk')
-    rfm_with_risk.to_csv("../data/processed/features.csv", index=True)
+    # 5. Encode categoricals (NEW)
+    categorical_cols = ['ProductCategory', 'ChannelId']  # Adjust based on your data
+    final_data = encode_categorical(rfm_with_risk, categorical_cols)
+    
+    # 6. Save
+    final_data.to_csv("../data/processed/features.csv", index=False)
 

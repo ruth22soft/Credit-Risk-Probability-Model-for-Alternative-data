@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/week%205/Credit-Risk-Probability-Model-for-Alternative-data/src/mlruns/0/8515f57c455a45b9ba1c61893fe0f4d1/artifacts
+end_time: 1751289117819
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8515f57c455a45b9ba1c61893fe0f4d1
+run_name: blushing-newt-895
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751289114454
+status: 3
+tags: []
+user_id: hp

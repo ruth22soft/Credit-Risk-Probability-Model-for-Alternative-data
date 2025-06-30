@@ -1,0 +1,10 @@
+artifact_location: file:///E:/week%205/Credit-Risk-Probability-Model-for-Alternative-data/src/mlruns/0/models/m-3d73237db7f647e98178ff680d6259be/artifacts
+creation_timestamp: 1751289114642
+experiment_id: '0'
+last_updated_timestamp: 1751289117803
+model_id: m-3d73237db7f647e98178ff680d6259be
+model_type: null
+name: model
+source_run_id: 8515f57c455a45b9ba1c61893fe0f4d1
+status: 2
+status_message: null
