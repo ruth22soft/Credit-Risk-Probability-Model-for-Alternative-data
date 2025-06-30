@@ -8,10 +8,15 @@ from sklearn.preprocessing import StandardScaler
 # temporal features
 
 def extract_temporal_features(df):
-    df['TransactionHour'] = pd.to_datetime(df['TransactionStartTime']).dt.hour
-    df['TransactionDay'] = pd.to_datetime(df['TransactionStartTime']).dt.day
+    """Extract time-based features from TransactionStartTime"""
+    df['TransactionStartTime'] = pd.to_datetime(df['TransactionStartTime'])
+    
+    df['TransactionHour'] = df['TransactionStartTime'].dt.hour
+    df['TransactionDay'] = df['TransactionStartTime'].dt.day
+    df['TransactionMonth'] = df['TransactionStartTime'].dt.month
+    df['TransactionYear'] = df['TransactionStartTime'].dt.year
+    
     return df
-
 
 def create_rfm_features(df):
     df['TransactionStartTime'] = pd.to_datetime(df['TransactionStartTime'])
