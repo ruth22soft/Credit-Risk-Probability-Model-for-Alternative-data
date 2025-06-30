@@ -5,6 +5,14 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 
+# temporal features
+
+def extract_temporal_features(df):
+    df['TransactionHour'] = pd.to_datetime(df['TransactionStartTime']).dt.hour
+    df['TransactionDay'] = pd.to_datetime(df['TransactionStartTime']).dt.day
+    return df
+
+
 def create_rfm_features(df):
     df['TransactionStartTime'] = pd.to_datetime(df['TransactionStartTime'])
     snapshot_date = df['TransactionStartTime'].max()
@@ -20,30 +28,25 @@ def create_rfm_features(df):
     })
     return rfm
 
-# temporal features
-
-def extract_temporal_features(df):
-    df['TransactionHour'] = pd.to_datetime(df['TransactionStartTime']).dt.hour
-    df['TransactionDay'] = pd.to_datetime(df['TransactionStartTime']).dt.day
-    return df
-
-# save processed data
-
-if __name__ == "__main__":
-    raw_data = pd.read_csv("../data/raw/data.csv")
-    processed_data = extract_temporal_features(raw_data)
-    rfm_data = create_rfm_features(processed_data)
-    rfm_data.to_csv("../data/processed/features.csv", index=True)
-
 def create_risk_labels(rfm_data):
-    # Scale RFM features
+    # Scale and cluster
     scaler = StandardScaler()
     rfm_scaled = scaler.fit_transform(rfm_data[['Recency', 'Frequency', 'Monetary']])
-    
-    # Cluster into 3 groups
     kmeans = KMeans(n_clusters=3, random_state=42)
     rfm_data['Cluster'] = kmeans.fit_predict(rfm_scaled)
-    
-    # Label the least engaged cluster as high-risk (e.g., Cluster 0)
-    rfm_data['is_high_risk'] = (rfm_data['Cluster'] == 0).astype(int)
+    rfm_data['is_high_risk'] = (rfm_data['Cluster'] == 0).astype(int)  # Critical line
     return rfm_data
+
+if __name__ == "__main__":
+    # 1. Load raw data
+    raw_data = pd.read_csv("../data/raw/data.csv")
+    
+    # 2. Create RFM features
+    rfm_data = create_rfm_features(raw_data)
+    
+    # 3. Add risk labels (THIS WAS MISSING!)
+    rfm_with_risk = create_risk_labels(rfm_data)
+    
+    # 4. Save FINAL data (now includes 'is_high_risk')
+    rfm_with_risk.to_csv("../data/processed/features.csv", index=True)
+

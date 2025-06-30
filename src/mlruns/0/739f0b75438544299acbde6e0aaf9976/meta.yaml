@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/week%205/Credit-Risk-Probability-Model-for-Alternative-data/src/mlruns/0/739f0b75438544299acbde6e0aaf9976/artifacts
+end_time: 1751287652799
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 739f0b75438544299acbde6e0aaf9976
+run_name: efficient-cow-281
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751287652596
+status: 4
+tags: []
+user_id: hp

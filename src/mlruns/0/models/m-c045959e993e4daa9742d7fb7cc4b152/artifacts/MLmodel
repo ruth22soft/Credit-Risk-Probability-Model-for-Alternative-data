@@ -1,0 +1,22 @@
+artifact_path: file:///E:/week%205/Credit-Risk-Probability-Model-for-Alternative-data/src/mlruns/0/models/m-c045959e993e4daa9742d7fb7cc4b152/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.2
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+mlflow_version: 3.1.1
+model_id: m-c045959e993e4daa9742d7fb7cc4b152
+model_size_bytes: 405892
+model_uuid: m-c045959e993e4daa9742d7fb7cc4b152
+prompts: null
+run_id: 8ab3cb8ae243474088e3ee12e8fc42eb
+utc_time_created: '2025-06-30 12:48:58.568114'

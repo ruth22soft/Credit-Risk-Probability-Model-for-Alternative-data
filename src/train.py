@@ -4,10 +4,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 import mlflow
+from sklearn.metrics import accuracy_score, classification_report
+
 
 def train_model():
     # Load processed data
-    data = pd.read_csv("data/processed/features.csv")
+    data = pd.read_csv("../data/processed/features.csv")
     X = data[['Recency', 'Frequency', 'Monetary']]
     y = data['is_high_risk']
 

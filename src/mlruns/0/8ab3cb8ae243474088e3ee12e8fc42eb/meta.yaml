@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/week%205/Credit-Risk-Probability-Model-for-Alternative-data/src/mlruns/0/8ab3cb8ae243474088e3ee12e8fc42eb/artifacts
+end_time: 1751287745446
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8ab3cb8ae243474088e3ee12e8fc42eb
+run_name: skillful-seal-851
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751287738284
+status: 3
+tags: []
+user_id: hp
